@@ -8,13 +8,7 @@ const workoutRoutes = require('./routes/workouts');
 const userRouter = require('./routes/user');
 require('dotenv').config();
 
-app.use(
-  cors({
-    origin: ['https://workoutbuddy-mern.vercel.app'],
-    methods: ['GET', 'POST', 'DELETE', 'PATCH'],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
