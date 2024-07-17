@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
-import { useAuthContext } from '../context/AuthContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 import WorkoutDetails from '../components/WorkoutDetails';
 import WorkoutForm from '../components/WorkoutForm';
