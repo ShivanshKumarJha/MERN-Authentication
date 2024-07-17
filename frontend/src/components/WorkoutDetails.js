@@ -5,11 +5,12 @@ import { useAuthContext } from '../hooks/useAuthContext';
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
+  const BASE_URL = 'https://workout-buddy-m4nw.onrender.com';
 
   const handleClick = async () => {
     if (!user) return;
 
-    const response = await fetch('/api/workouts/' + workout._id, {
+    const response = await fetch(`${BASE_URL}/api/workouts/` + workout._id, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${user.token}`,

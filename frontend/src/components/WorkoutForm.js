@@ -5,6 +5,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
+  const BASE_URL = 'https://workout-buddy-m4nw.onrender.com';
 
   const [title, setTitle] = useState('');
   const [load, setLoad] = useState('');
@@ -22,7 +23,7 @@ const WorkoutForm = () => {
 
     const workout = { title, load, reps };
 
-    const response = await fetch('/api/workouts', {
+    const response = await fetch(`${BASE_URL}/api/workouts`, {
       method: 'POST',
       body: JSON.stringify(workout),
       headers: {

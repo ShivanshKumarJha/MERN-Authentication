@@ -8,10 +8,11 @@ import WorkoutForm from '../components/WorkoutForm';
 const Home = () => {
   const { workouts, dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
+  const BASE_URL = 'https://workout-buddy-m4nw.onrender.com';
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch('/api/workouts', {
+      const response = await fetch(`${BASE_URL}/api/workouts`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
